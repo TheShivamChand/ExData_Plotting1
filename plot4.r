@@ -9,7 +9,7 @@ datas<-datas[complete.cases(datas),]
 datetime<- paste(datas$Date,datas$Time)
 datetime<-setNames(datetime,"datetime")
 datas<-cbind(datetime,datas)
-datas$datetime <- as.POSIXct(datetime)
+datas$datetime<-as.POSIXct(datetime)
 par(mfrow=c(2,2))
 with(datas,{plot(Global_active_power~datetime,type="l",xlab="",ylab="Global Active Power (kilowatts)")
   plot(Voltage~datetime,type="l",ylab="Voltage (volt)",xlab="")
